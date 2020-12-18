@@ -1,2 +1,10 @@
 class Author < ActiveRecord::Base
-end
+    validates :name, length: { minimum: 2 }
+    validates :name, uniqueness: true
+    validates :phone_number, length: { is: 10 }
+  end
+
+
+# All authors have a name
+# No two authors have the same name
+# Author phone numbers are exactly ten digits
